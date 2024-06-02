@@ -1,0 +1,29 @@
+{
+  "name": "discord-client",
+  "version": "1.0.5",
+  "description": "",
+  "scripts": {
+    "build": "tsc",
+    "prepublish": "npm run build",
+    "local": "node dist/index.js"
+  },
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "types": "src/index.d.ts",
+  "files": [
+    "src/index.d.ts",
+    "dist/index.js",
+    "dist/discord-helper.js"
+  ],
+  "author": "Moongoose",
+  "license": "ISC",
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "moongoose-client": "^1.0.4"
+  },
+  "devDependencies": {
+    "@types/archiver": "^6.0.2",
+    "@types/node": "^20.12.8",
+    "typescript": "^5.4.5"
+  }
+}
