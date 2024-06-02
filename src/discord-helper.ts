@@ -1,9 +1,3 @@
-/**
- * Create the 'content' for the discord message
- * @param userlist - who you want notified
- * @param message - message to be sent
- * @param urlList - any url attachments
- */
 const generateMessage = (userlist: string[], message: string, urlList: string[]): string => {
     let userString, messageString, urlString;
     if (userlist) userString = formatUsers(userlist);
