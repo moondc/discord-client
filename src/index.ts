@@ -32,7 +32,6 @@ class DiscordClient {
 
     postXhrAsEmbed(url: string, header?: {[key: string]: string} ): Observable<any> {
         const form = new FormData();
-        //@ts-ignore
         return MGClient.get(url, header).pipe(mergeMap(data => {
             const filename = url.split("/").pop() + ".txt"; //https://domain/facebook -> facebook.txt
             filestream.writeFileSync(filename, data as string);
