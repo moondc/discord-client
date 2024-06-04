@@ -12,14 +12,16 @@ MGClient.initialize({
 class DiscordClient {
     private healthEndpoint: string = "";
     private contentEndpoint: string = "";
+    private serviceName: string = "";
 
-    initialize(healthEndpoint: string, contentEndpoint: string) {
+    initialize(serviceName: string, healthEndpoint: string, contentEndpoint: string) {
         this.healthEndpoint = healthEndpoint;
         this.contentEndpoint = contentEndpoint;
+        this.serviceName = serviceName;
     }
 
-    healthPost(message: string): Observable<any> {
-        const content = generateMessage([], message, []);
+    healthPost(message: any): Observable<any> {
+        const content = `${this.serviceName}\n\n${JSON.stringify(message)}`;
         return MGClient.post(this.healthEndpoint, { content });
     }
 

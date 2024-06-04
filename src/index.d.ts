@@ -6,9 +6,9 @@ declare class DiscordClient {
 
     constructor(a: string, b: string);
 
-    healthPost(message: string): Observable<any>;
+    healthPost(message: any): Observable<any>;
     statusPost(users: string[], message: string, urls: string[]): Observable<any>;
-    initialize(healthEndpoint: string, edgarEndpoint: string): void
+    initialize(serviceName: string, healthEndpoint: string, edgarEndpoint: string): void
     postXhrAsEmbed(url: string, header?: {[key: string]: string} ): Observable<any>;
 }
 
